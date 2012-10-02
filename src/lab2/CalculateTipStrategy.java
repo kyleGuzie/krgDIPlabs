@@ -12,7 +12,9 @@ package lab2;
  * @version 1.00 10/1/12
  */
 public interface CalculateTipStrategy {
-
+public static enum ServiceQuality {
+        GOOD, FAIR, POOR
+    }
     double getTip();
 
 }
