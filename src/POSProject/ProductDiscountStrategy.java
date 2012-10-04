@@ -10,16 +10,21 @@ package POSProject;
  */
 public class ProductDiscountStrategy implements DiscountStrategy {
 
-    private int minQty = 5;
+
+
     private double discountPercent = .5;
 
+    public final void setDiscountPercent(double discountPercent) {
+        this.discountPercent = discountPercent;
+    }
+
+
     @Override
-    public double calculateDiscount(double price, int qty) {
-        if (qty > minQty) {
-            return (price * discountPercent);
-        } else {
-            return 0;
+    public double calculateDiscount(double cost, int qty) {
+        if (discountPercent > 1) {
+            throw new IllegalArgumentException();
         }
+        return (cost * discountPercent);
 
 
     }
